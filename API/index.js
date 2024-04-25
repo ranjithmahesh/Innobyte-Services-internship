@@ -19,6 +19,9 @@ mongoose
 
 app.use("/auth", authRouter);
 
+app.get("/", (req, res) => {
+  res.status(200).json("hi there ");
+});
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
