@@ -71,14 +71,24 @@ function Login() {
 
         setLoading(false);
       } catch (error) {
-        console.error(error, "error");
+        console.error(error);
         setLoading(false);
-        if (error.response && error.response.status === 404) {
-          toast.error("User not found");
-        } else if (error.response && error.response.status === 403) {
-          toast.error("Email not verifed, check your email ");
-        } else if (error.response && error.response.status === 401) {
-          toast.error("Invalid email or password ");
+
+        const { response } = error;
+        if (response) {
+          switch (response.status) {
+            case 404:
+              toast.error("User not found");
+              break;
+            case 403:
+              toast.error("Email not verified, check your email");
+              break;
+            case 401:
+              toast.error("Invalid email or password");
+              break;
+            default:
+              toast.error("An error occurred");
+          }
         } else {
           toast.error("An error occurred");
         }
