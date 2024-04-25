@@ -15,7 +15,7 @@ function Verify({ searchParams }) {
   const [otp, setOtp] = useState("");
   const [data, setData] = useState("");
   const [loading, setLoading] = useState(false);
-  console.log(data);
+
   useEffect(() => {
     setLoading(true);
     const fetchOTP = async () => {

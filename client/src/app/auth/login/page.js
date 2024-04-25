@@ -9,8 +9,8 @@ import React, { useState } from "react";
 
 function Login() {
   const [data, setData] = useState({
-    email: "ranjithmahesh1997@gmail.com",
-    password: "i20*raNjith998",
+    email: "",
+    password: "",
   });
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
