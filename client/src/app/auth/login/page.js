@@ -65,6 +65,7 @@ function Login() {
         localStorage.setItem("token", res.data.user.email);
 
         if (res.data) {
+          toast.success("OTP sent to your Email");
           router.push(`/auth/verify?${res.data.user.email}`);
         }
 
@@ -76,42 +77,14 @@ function Login() {
           toast.error("User not found");
         } else if (error.response && error.response.status === 403) {
           toast.error("Email not verifed, check your email ");
+        } else if (error.response && error.response.status === 401) {
+          toast.error("Invalid email or password ");
         } else {
           toast.error("An error occurred");
         }
       }
     }
   };
-
-  // const onSubmit = async () => {
-  //   if (handleValidation()) {
-  //     setLoading(true);
-  //     try {
-  //       const res = await axios.post(
-  //         `${process.env.NEXT_PUBLIC_BASEURL}/auth/login`,
-  //         {
-  //           email: data.email,
-  //           password: data.password,
-  //         }
-  //       );
-
-  //       console.log(res.data.token);
-  //       localStorage.setItem("token", res.data.user.email);
-
-  //       // if (res.data) {
-  //       //   router.push(`/auth/verify?${res.data.user.email}`);
-  //       // }
-  //       router.push("/user");
-
-  //       setLoading(false);
-  //       // Handle successful response
-  //     } catch (error) {
-  //       // Handle error
-  //       console.error(error, "error");
-  //       setLoading(false);
-  //     }
-  //   }
-  // };
 
   return (
     <div className="bg-[#131a2c] w-screen h-screen flex flex-row p-14 px-44 rounded-lg">
