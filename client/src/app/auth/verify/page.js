@@ -49,10 +49,10 @@ function Verify({ searchParams }) {
   };
 
   return (
-    <div className="w-screen h-screen bg-blue-500 flex justify-center items-center">
-      <div className="bg-white p-8 rounded-lg shadow-md flex items-center flex-col">
-        <h1 className="text-2xl font-bold mb-4">Verify OTP</h1>
-        <p className="text-gray-600 mb-4">
+    <div className="w-screen h-screen bg-[#131a2c]  flex justify-center items-center">
+      <div className="bg-[#2d3250]  p-8 rounded-lg shadow-md flex items-center flex-col">
+        <h1 className="text-2xl font-bold mb-4 text-white">Verify OTP</h1>
+        <p className="mb-4 text-white">
           OTP has been sent to your email. Please check.
         </p>
         <OtpInput

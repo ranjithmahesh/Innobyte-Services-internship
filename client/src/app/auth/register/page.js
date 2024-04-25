@@ -84,8 +84,8 @@ function Register() {
   };
 
   return (
-    <div className="bg-[#131a2c] w-screen h-screen flex flex-row p-14 px-44 rounded-lg">
-      <div className="bg-[#2d3250] flex-1 rounded-l-3xl p-3">
+    <div className="bg-[#131a2c] w-screen h-screen flex flex-row p-14 lg:px-44 rounded-lg">
+      <div className="bg-[#2d3250] flex-1 rounded-l-3xl p-3 ">
         <div className="flex gap-5 text-white">
           <Link href={"/auth/login"}>
             <h1
@@ -223,7 +223,7 @@ function Register() {
           </button>{" "}
         </div>
       </div>
-      <div className="flex-1 ">
+      <div className="flex-1  hidden lg:block">
         <Image
           className=" w-full h-full  object-cover rounded-r-3xl"
           alt="l"
