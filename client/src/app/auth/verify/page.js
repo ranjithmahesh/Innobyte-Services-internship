@@ -35,7 +35,7 @@ function Verify({ searchParams }) {
     fetchOTP();
   }, [email]);
   const handleSubmit = () => {
-    setData(true);
+    setLoading(true);
     if (data !== otp) {
       setLoading(false);
       setOtp("");
