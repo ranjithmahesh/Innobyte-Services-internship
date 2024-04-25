@@ -75,6 +75,7 @@ function Register() {
         if (error.response && error.response.status === 400) {
           toast.error("User already exists");
         } else {
+          toast.error("Please try again");
           console.error(error, "error");
         }
         setLoading(false);

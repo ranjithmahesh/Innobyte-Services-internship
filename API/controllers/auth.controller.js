@@ -20,7 +20,7 @@ const sendVerificationEmail = async (email, verificationToken, name) => {
     from: "amazon.com",
     to: email,
     subject: "Email Verification",
-    text: `Please click the following link to verify your email http://localhost:5000/auth/verify/${verificationToken} You email ${name}`,
+    text: `Please click the following link to verify your email https://innobyte-services-internship.onrender.com/auth/verify/${verificationToken} You email ${name}`,
   };
 
   // Send the email
